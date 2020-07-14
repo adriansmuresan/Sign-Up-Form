@@ -30,3 +30,25 @@ h1 {
   font-size: 40px;
   line-height: 50px;
 }
+
+p {
+  opacity: 0.8;
+  font-size: 15px;
+}
+
+.box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 6px rgba(0, 0,0, 0.2);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.box p {
+  margin: 0;
+}
+
+.box-blue {
+  background-color: hsl(248, 32%, 49%);
+}
