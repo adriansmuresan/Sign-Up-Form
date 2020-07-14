@@ -19,6 +19,7 @@ body {
   max-width: 1200px;
   padding: 20px;
   min-height: 100vh;
+  margin: 0 auto;
 }
 
 .container > div {
@@ -51,4 +52,21 @@ p {
 
 .box-blue {
   background-color: hsl(248, 32%, 49%);
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: 1px solid hsl(246, 25%, 77%);
+  font-family: 'Poppins',
+  sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+input:focus {
+  border: 1px solid  hsl(248, 32%, 49%);
+  outline: none;
 }
