@@ -10,19 +10,29 @@ form.addEventListener('submit', e => {
   const password = form['password'].value;
  
   if (firstName === '') {
-    addErrorTo('firstname', 'First name is required');
+    addErrorTo('firstname', 'First Name cannot be empty');
+  } else {
+    removeError('firstname');
   }
 
   if (lastName === '') {
     addErrorTo('lastname', 'Last Name cannot be empty');
+  } else {
+    removeError('lastname')
   }
 
-  if (isValid(email)) {
+  if (email === '') {
+    addErrorTo('email', 'Email cannot be empty');
+  } else if (!isValid(email)) {
     addErrorTo('email', 'Email is not valid');
+  } else {
+    removeError('email');
   }
 
   if (password === '') {
     addErrorTo('password', 'Password cannot be empty');
+  } else {
+    removeError('password');
   }
 
 });
@@ -31,4 +41,14 @@ function addErrorTo(field, message) {
   const small = form[field].parentNode.querySelector('small');
   small.innerText = message;
   small.style.opacity = 1;
+}
+
+function removeError(field) {
+  const small = form[field].parentNode.querySelector('small');
+  small.style.opacity = 0;
+}
+
+function isValid(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 }
