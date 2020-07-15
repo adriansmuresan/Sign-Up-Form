@@ -10,9 +10,25 @@ form.addEventListener('submit', e => {
   const password = form['password'].value;
  
   if (firstName === '') {
-    const small = form['firstname'].parentNode.querySelector('small');
-    small.innerText = 'First Name cannot be empty';
-    small.style.opacity = 1;
+    addErrorTo('firstname', 'First name is required');
   }
-  
+
+  if (lastName === '') {
+    addErrorTo('lastname', 'Last Name cannot be empty');
+  }
+
+  if (isValid(email)) {
+    addErrorTo('email', 'Email is not valid');
+  }
+
+  if (password === '') {
+    addErrorTo('password', 'Password cannot be empty');
+  }
+
 });
+
+function addErrorTo(field, message) {
+  const small = form[field].parentNode.querySelector('small');
+  small.innerText = message;
+  small.style.opacity = 1;
+}
