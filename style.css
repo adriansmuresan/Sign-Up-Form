@@ -17,7 +17,6 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 1200px;
-  padding: 20px;
   min-height: 100vh;
   margin: 0 auto;
 }
@@ -124,4 +123,13 @@ small a {
   color: hsl(0, 100%, 74%);
   text-decoration: none;
   font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  h1, p {
+    text-align: center;
+  }
+  .container {
+    flex-direction: column;
+  }
 }
